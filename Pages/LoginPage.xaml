@@ -5,7 +5,7 @@
 			<Image Source="kiewitLogo.jpg" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
 			<Entry x:Name="usernameBox" Placeholder="username" HorizontalOptions="CenterAndExpand" />
 			<Entry x:Name="passwordBox" Placeholder="password" IsPassword="false" HorizontalOptions="CenterAndExpand" />
-			<Button Text="Login" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" IsEnabled="false" />
+			<Button x:Name="loginButton" Clicked="LoginClicked" Text="Login" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" />
 		</StackLayout>
 	</ContentPage.Content>
 </ContentPage>
