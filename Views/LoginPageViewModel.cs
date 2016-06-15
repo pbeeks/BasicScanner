@@ -9,8 +9,6 @@ namespace BasicScanner
 	public class LoginPageViewModel
 	{
 		private Realm _realm;
-		LoginPage _loginPage = new LoginPage();
-		NavigationPage _navPage = new NavigationPage();
 		public LoginPageViewModel() {
 			
 		}
@@ -34,7 +32,7 @@ namespace BasicScanner
 						loginUser = newUser;
 					});
 					UserDialogs.Instance.SuccessToast("User created", null, 3000);
-					App.Current.MainPage = new MainPage(loginUser);
+					App.Current.MainPage = new NavigationPage(new MainPage(loginUser));
 				}
 			}
 			else
@@ -44,7 +42,7 @@ namespace BasicScanner
 				{
 					UserDialogs.Instance.ErrorToast("Login failed", "Username or password incorrect", 3000);
 				}
-				App.Current.MainPage = new MainPage(loginUser);
+				App.Current.MainPage = new NavigationPage(new MainPage(loginUser));
 			}
 		}
 

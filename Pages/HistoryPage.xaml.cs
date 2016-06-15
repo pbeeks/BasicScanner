@@ -5,13 +5,11 @@ using Xamarin.Forms;
 
 namespace BasicScanner
 {
-	public partial class MasterPage : ContentPage
+	public partial class HistoryPage : ContentPage
 	{
-		public MasterPage(RealmDB.User user)
+		public HistoryPage(RealmDB.User user)
 		{
-
-
-
+			InitializeComponent();
 		}
 	}
 }

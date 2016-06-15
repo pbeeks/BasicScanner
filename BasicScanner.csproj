@@ -35,13 +35,16 @@
     <EmbeddedResource Include="Pages\LoginPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pages\MainPage.xaml">
+    <EmbeddedResource Include="Pages\HistoryPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pages\MasterPage.xaml">
+    <EmbeddedResource Include="Pages\MasterDetail\MainPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pages\OptionsPage.xaml">
+    <EmbeddedResource Include="Pages\MasterDetail\MasterPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\MasterDetail\OptionsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
@@ -59,13 +62,16 @@
     <Compile Include="Views\LoginPageViewModel.cs" />
     <Compile Include="Database\RealmDB.cs" />
     <Compile Include="Views\MainPageViewModel.cs" />
-    <Compile Include="Pages\MainPage.xaml.cs">
+    <Compile Include="Pages\HistoryPage.xaml.cs">
+      <DependentUpon>HistoryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MasterDetail\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\MasterPage.xaml.cs">
+    <Compile Include="Pages\MasterDetail\MasterPage.xaml.cs">
       <DependentUpon>MasterPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\OptionsPage.xaml.cs">
+    <Compile Include="Pages\MasterDetail\OptionsPage.xaml.cs">
       <DependentUpon>OptionsPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -94,6 +100,18 @@
     <Reference Include="Realm">
       <HintPath>..\packages\Realm.0.76.1\lib\portable-net45+sl5+wp8+wpa81+win8+monoandroid+Xamarin.iOS10+monotouch+Xamarin.Mac\Realm.dll</HintPath>
     </Reference>
+    <Reference Include="zxing.portable">
+      <HintPath>..\packages\ZXing.Net.Mobile.2.0.4.46\lib\portable-net45+netcore45+wp8+UAP10+MonoAndroid403+MonoTouch10+Xamarin.iOS10\zxing.portable.dll</HintPath>
+    </Reference>
+    <Reference Include="ZXing.Net.Mobile.Core">
+      <HintPath>..\packages\ZXing.Net.Mobile.2.0.4.46\lib\portable-net45+netcore45+wp8+UAP10+MonoAndroid403+MonoTouch10+Xamarin.iOS10\ZXing.Net.Mobile.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="ZXingNetMobile">
+      <HintPath>..\packages\ZXing.Net.Mobile.2.0.4.46\lib\portable-net45+netcore45+wp8+UAP10+MonoAndroid403+MonoTouch10+Xamarin.iOS10\ZXingNetMobile.dll</HintPath>
+    </Reference>
+    <Reference Include="ZXing.Net.Mobile.Forms">
+      <HintPath>..\packages\ZXing.Net.Mobile.Forms.2.0.4.46\lib\portable-net45+netcore45+wp8+UAP10.0+MonoAndroid403+MonoTouch10+Xamarin.iOS10\ZXing.Net.Mobile.Forms.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -103,6 +121,7 @@
     <Folder Include="Pages\" />
     <Folder Include="Views\" />
     <Folder Include="Database\" />
+    <Folder Include="Pages\MasterDetail\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.2.0.45\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.2.0.45\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />

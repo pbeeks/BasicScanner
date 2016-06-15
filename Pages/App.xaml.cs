@@ -7,7 +7,6 @@ namespace BasicScanner
 		public App()
 		{
 			InitializeComponent();
-
 			MainPage = new NavigationPage(new LoginPage());
 		}
 
