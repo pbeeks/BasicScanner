@@ -9,7 +9,8 @@ namespace BasicScanner
 	public class LoginPageViewModel
 	{
 		private Realm _realm;
-		LoginPage page = new LoginPage();
+		LoginPage _loginPage = new LoginPage();
+		NavigationPage _navPage = new NavigationPage();
 		public LoginPageViewModel() {
 			
 		}
@@ -24,13 +25,16 @@ namespace BasicScanner
 				var answer = await UserDialogs.Instance.ConfirmAsync("User not found, create user " + userParam + "?", "Cancel", "Create");
 				if (answer == true)
 				{
+					RealmDB.User loginUser = null;
 					_realm.Write(() =>
 					{
 						var newUser = _realm.CreateObject<RealmDB.User>();
 						newUser.username = userParam;
 						newUser.password = passParam;
+						loginUser = newUser;
 					});
 					UserDialogs.Instance.SuccessToast("User created", null, 3000);
+					App.Current.MainPage = new MainPage(loginUser);
 				}
 			}
 			else
@@ -39,8 +43,8 @@ namespace BasicScanner
 				if (loginUser == null)
 				{
 					UserDialogs.Instance.ErrorToast("Login failed", "Username or password incorrect", 3000);
-					return;
 				}
+				App.Current.MainPage = new MainPage(loginUser);
 			}
 		}
 

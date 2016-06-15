@@ -18,3 +18,8 @@
 /Users/patrick.buechler/Projects/BasicScanner/BasicScanner/bin/Debug/Acr.UserDialogs.Interface.dll
 /Users/patrick.buechler/Projects/BasicScanner/BasicScanner/obj/Debug/BasicScanner.Pages.MainPage.xaml
 /Users/patrick.buechler/Projects/BasicScanner/BasicScanner/obj/Debug/BasicScanner.Pages.MainPage.xaml.g.cs
+/Users/patrick.buechler/Projects/BasicScanner/BasicScanner/obj/Debug/BasicScanner.Pages.MasterPage.xaml
+/Users/patrick.buechler/Projects/BasicScanner/BasicScanner/obj/Debug/BasicScanner.Pages.OptionsPage.xaml
+/Users/patrick.buechler/Projects/BasicScanner/BasicScanner/obj/Debug/BasicScanner.Pages.MasterPage.xaml.g.cs
+/Users/patrick.buechler/Projects/BasicScanner/BasicScanner/obj/Debug/BasicScanner.Pages.OptionsPage.xaml.g.cs
+/Users/patrick.buechler/Projects/BasicScanner/BasicScanner/bin/Debug/DotNetCross.Memory.Unsafe.dll
