@@ -2,6 +2,7 @@
 using Xamarin.Forms;
 using Realms;
 using System.Linq;
+using Acr.UserDialogs;
 
 namespace BasicScanner
 {
@@ -20,7 +21,7 @@ namespace BasicScanner
 			var currentUser = _realm.All<RealmDB.User>().Where(d => (d.username == userParam)).ToList().FirstOrDefault();
 			if (currentUser == null)
 			{
-				var answer = await page.DisplayAlert("Login Failed", "Would you like to create a user with the username " + userParam + "?", "Yes", "No");
+				var answer = await UserDialogs.Instance.ConfirmAsync("User not found, create user " + userParam + "?", "Cancel", "Create");
 				if (answer == true)
 				{
 					_realm.Write(() =>
@@ -29,11 +30,17 @@ namespace BasicScanner
 						newUser.username = userParam;
 						newUser.password = passParam;
 					});
+					UserDialogs.Instance.SuccessToast("User created", null, 3000);
 				}
-				else{
+			}
+			else
+			{
+				var loginUser = _realm.All<RealmDB.User>().Where(u => u.username == userParam && u.password == passParam).ToList().FirstOrDefault();
+				if (loginUser == null)
+				{
+					UserDialogs.Instance.ErrorToast("Login failed", "Username or password incorrect", 3000);
 					return;
 				}
-
 			}
 		}
 
