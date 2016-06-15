@@ -20,6 +20,12 @@ namespace BasicScanner
 			string password = passwordBox.Text;
 			_loginPageVM.Login(username, password);
 		}
+
+		public void OnComplete(object sender, EventArgs e) {
+			if (usernameBox.Text.Length > 5 && passwordBox.Text.Length > 5) {
+				loginButton.IsEnabled = true;
+			}
+		}
 	}
 }
 
