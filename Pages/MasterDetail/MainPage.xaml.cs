@@ -9,11 +9,15 @@ namespace BasicScanner
 	{
 		public MainPage(RealmDB.User user)
 		{
-			Detail = new NavigationPage(new MasterPage(user)); 
-			Master = new OptionsPage(user){
-				Title = "Main"
+			Detail = new NavigationPage(new MasterPage(user));
+			Master = new OptionsPage(user)
+			{
+				Title = "Menu",
+				BackgroundColor = Color.FromHex("d3d3d3")
 			};
 		}
+
+
 	}
 }
 

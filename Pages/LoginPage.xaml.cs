@@ -15,9 +15,11 @@ namespace BasicScanner
 		}
 
 		public void LoginClicked(object sender, EventArgs e) {
+			string username = null;
+			string password = null;
 			_loginPageVM = new LoginPageViewModel();
-			string username = usernameBox.Text;
-			string password = passwordBox.Text;
+			username = usernameBox.Text;
+			password = passwordBox.Text;
 			_loginPageVM.Login(username, password);
 		}
 
