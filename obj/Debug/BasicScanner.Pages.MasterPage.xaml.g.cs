@@ -14,11 +14,11 @@ namespace MasterDetailPageNavigation {
     using Xamarin.Forms.Xaml;
     
     
-    public partial class MainPage : global::Xamarin.Forms.MasterDetailPage {
+    public partial class MasterPage : global::Xamarin.Forms.ContentPage {
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
-            this.LoadFromXaml(typeof(MainPage));
+            this.LoadFromXaml(typeof(MasterPage));
         }
     }
 }
