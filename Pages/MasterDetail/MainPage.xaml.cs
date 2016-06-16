@@ -14,6 +14,7 @@ namespace BasicScanner
 			Master = new OptionsPage(user)
 			{
 				Title = "Menu",
+				Icon = "menuIcon2.png",
 				BackgroundColor = Color.FromHex("d3d3d3")
 			};
 		}

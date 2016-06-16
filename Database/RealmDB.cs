@@ -1,6 +1,7 @@
 ﻿using System;
 using Realms;
 using System.ServiceModel.Security;
+using System.Collections.Generic;
 
 namespace BasicScanner
 {
@@ -30,6 +31,7 @@ namespace BasicScanner
 			public string Format { get; set; }
 
 			public string Content { get; set; }
+
 		}
 	}
 }

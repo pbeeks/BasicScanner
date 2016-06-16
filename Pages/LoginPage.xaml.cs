@@ -10,6 +10,7 @@ namespace BasicScanner
 		private LoginPageViewModel _loginPageVM;
 		public LoginPage()
 		{
+			NavigationPage.SetHasNavigationBar(this, false);
 			this.BindingContext = _loginPageVM;
 			InitializeComponent();
 		}
