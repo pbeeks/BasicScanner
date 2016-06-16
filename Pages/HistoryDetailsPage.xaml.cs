@@ -11,6 +11,10 @@ namespace BasicScanner
 		{
 			InitializeComponent();
 		}
+
+		public void BackClicked(object sender, EventArgs e) {
+			Navigation.PopModalAsync();
+		}
 	}
 }
 

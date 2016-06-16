@@ -4,6 +4,7 @@ using Realms;
 using Xamarin.Forms;
 using ZXing.Net.Mobile.Forms;
 using System.Dynamic;
+using Acr.UserDialogs;
 
 namespace BasicScanner
 {
@@ -38,18 +39,23 @@ namespace BasicScanner
 
 			if (result != null)
 			{
-				string[] timeArray = DateTime.Now.ToString().Split(null);
-				_realm.Write(() =>
+				var answer = await UserDialogs.Instance.ConfirmAsync("Would you like to track this barcode?", "Barcode found!", "No", "Yes");
+				if (answer == true)
 				{
-					var newScan = _realm.CreateObject<RealmDB.ScanResult>();
-					newScan.Date = timeArray[0];
-					newScan.Time = timeArray[1] + " " + timeArray[2];
-					newScan.Format = result.BarcodeFormat.ToString();
-					newScan.Owner = currUser;
-					newScan.Content = "This is what I scanned";
-				});
+					string[] timeArray = DateTime.Now.ToString().Split(null);
+					_realm.Write(() =>
+					{
+						var newScan = _realm.CreateObject<RealmDB.ScanResult>();
+						newScan.Date = timeArray[0];
+						newScan.Time = timeArray[1] + " " + timeArray[2];
+						newScan.Format = result.BarcodeFormat.ToString();
+						newScan.Owner = currUser;
+						newScan.Content = "This is what I scanned";
+					});
+				}
 			}
 		}
 	}
 }
+
 
