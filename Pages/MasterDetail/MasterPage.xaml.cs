@@ -39,7 +39,7 @@ namespace BasicScanner
 
 			if (result != null)
 			{
-				var answer = await UserDialogs.Instance.ConfirmAsync("Would you like to track this barcode?", "Barcode found!", "No", "Yes");
+				var answer = await UserDialogs.Instance.ConfirmAsync("Would you like to track this barcode?", "Barcode found!", "Yes", "No");
 				if (answer == true)
 				{
 					string[] timeArray = DateTime.Now.ToString().Split(null);

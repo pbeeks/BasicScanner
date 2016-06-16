@@ -7,8 +7,11 @@ namespace BasicScanner
 {
 	public partial class HistoryDetailsPage : ContentPage
 	{
-		public HistoryDetailsPage(RealmDB.ScanResult info)
+
+		public HistoryDetailsPage(RealmDB.ScanResult Info)
 		{
+			// link up the data to the HistoryDetails page
+			this.BindingContext = new HistoryDetailPageViewModel(this.Navigation);
 			InitializeComponent();
 		}
 

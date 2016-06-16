@@ -13,10 +13,12 @@ namespace BasicScanner
 		private Realm _realm;
 		public INavigation Navigation { get; set; }
 
-		public HistoryPageViewModel()
+		public HistoryPageViewModel(INavigation iNav)
 		{
+			Navigation = iNav;
 			_realm = Realm.GetInstance();
-			ScanList = _realm.All<RealmDB.ScanResult>();
+			ScanList = null;
+			ScanList = _realm.All<RealmDB.ScanResult>().ToList();
 		}
 	}
 }
