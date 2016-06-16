@@ -16,7 +16,9 @@ namespace BasicScanner
 
 		public async void HistoryClicked(object sender, EventArgs e)
 		{
-			await Navigation.PushAsync(new HistoryPage(currUser));
+			await Navigation.PushAsync(new HistoryPage(currUser){
+				Title = "History"
+			});
 		}
 
 		public async void LogOutClicked(object sender, EventArgs e)
