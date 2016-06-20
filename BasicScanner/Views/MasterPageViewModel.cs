@@ -66,9 +66,9 @@ namespace BasicScanner
 						var newScan = _realm.CreateObject<RealmDB.ScanResult>();
 						newScan.Date = timeArray[0];
 						newScan.Time = timeArray[1] + " " + timeArray[2];
-						newScan.Format = result.BarcodeFormat.ToString();
+						newScan.Format = result.BarcodeFormat;
 						newScan.Owner = currUser;
-						newScan.Content = "This is what I scanned";
+						newScan.Content = result.Text;
 					});
 				}
 			}

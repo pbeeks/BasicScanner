@@ -81,8 +81,6 @@
     <Compile Include="Views\HistoryDetailPageViewModel.cs" />
     <Compile Include="Views\HistoryPageViewModel.cs" />
     <Compile Include="Views\LoginPageViewModel.cs" />
-    <Compile Include="Views\MainPageViewModel.cs" />
-    <Compile Include="Views\MasterDetailPageViewModel.cs" />
     <Compile Include="Views\MasterPageViewModel.cs" />
     <Compile Include="Views\OptionsPageViewModel.cs" />
   </ItemGroup>

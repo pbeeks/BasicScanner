@@ -2,6 +2,7 @@
 using Realms;
 using System.ServiceModel.Security;
 using System.Collections.Generic;
+using ZXing.Net.Mobile.Forms;
 
 namespace BasicScanner
 {
