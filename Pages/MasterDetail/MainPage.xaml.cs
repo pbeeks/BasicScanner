@@ -13,8 +13,8 @@ namespace BasicScanner
 			NavigationPage.SetHasNavigationBar(this, false);
 			Master = new OptionsPage(user)
 			{
-				Title = "Menu",
 				Icon = "menuIcon2.png",
+				Title = "menu",
 				BackgroundColor = Color.FromHex("d3d3d3")
 			};
 		}

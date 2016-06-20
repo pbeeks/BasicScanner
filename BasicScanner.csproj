@@ -62,9 +62,7 @@
     <Compile Include="Pages\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\LoginPageViewModel.cs" />
     <Compile Include="Database\RealmDB.cs" />
-    <Compile Include="Views\MainPageViewModel.cs" />
     <Compile Include="Pages\HistoryPage.xaml.cs">
       <DependentUpon>HistoryPage.xaml</DependentUpon>
     </Compile>
@@ -77,11 +75,16 @@
     <Compile Include="Pages\MasterDetail\OptionsPage.xaml.cs">
       <DependentUpon>OptionsPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\HistoryPageViewModel.cs" />
     <Compile Include="Pages\HistoryDetailsPage.xaml.cs">
       <DependentUpon>HistoryDetailsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\HistoryDetailPageViewModel.cs" />
+    <Compile Include="Views\HistoryPageViewModel.cs" />
+    <Compile Include="Views\LoginPageViewModel.cs" />
+    <Compile Include="Views\MainPageViewModel.cs" />
+    <Compile Include="Views\MasterDetailPageViewModel.cs" />
+    <Compile Include="Views\MasterPageViewModel.cs" />
+    <Compile Include="Views\OptionsPageViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Splat">

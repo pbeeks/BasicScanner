@@ -14,11 +14,10 @@ namespace BasicScanner
 		private Realm _realm;
 		public RealmDB.ScanResult HistoryData { get; set; }
 
-		public HistoryDetailPageViewModel(INavigation iNav)
+		public HistoryDetailPageViewModel(RealmDB.ScanResult Info)
 		{
-			_nav = iNav;
 			_realm = Realm.GetInstance();
-			HistoryData = 
+			HistoryData = Info;
 		}
 	}
 }

@@ -3,17 +3,22 @@ using System.Collections.Generic;
 
 using Xamarin.Forms;
 using Realms;
+using System.Linq;
 
 namespace BasicScanner
 {
 	public partial class HistoryPage : ContentPage
 	{
 		public IEnumerable<RealmDB.ScanResult> ScanList { get; set; }
+		private HistoryPageViewModel _histVM;
+		private Realm _realm;
 
 		public HistoryPage(RealmDB.User user)
 		{
 			InitializeComponent();
-			BindingContext = new HistoryPageViewModel { Navigation = Navigation };
+			_realm = Realm.GetInstance();
+			_histVM = new HistoryPageViewModel(this.Navigation);
+			this.BindingContext = _histVM;
 		}
 
 		public void HistorySelected(object sender, SelectedItemChangedEventArgs e) {
