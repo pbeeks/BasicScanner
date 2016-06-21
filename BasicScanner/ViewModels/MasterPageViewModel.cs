@@ -36,6 +36,7 @@ namespace BasicScanner
 			}
 		}
 
+		// Method to actually scan the barcode
 		async Task RunScan()
 		{
 			// TODO custom overlay to match spec
@@ -45,14 +46,12 @@ namespace BasicScanner
 			//	BottomText= "Scanning will happen automatically"
 			//};
 
-#if __ANDROID__
-   			 // Initialize the scanner first so it can track the current context
-   			 MobileBarcodeScanner.Initialize (Application);
-#endif
+//#if __ANDROID__
+//   			 // Initialize the scanner first so it can track the current context
+//   			 MobileBarcodeScanner.Initialize (Application);
+//#endif
 
 			var scanner = new ZXing.Mobile.MobileBarcodeScanner();
-			//scanner.UseCustomOverlay = true;
-			//scanner.CustomOverlay = overlay;
 			var result = await scanner.Scan();
 
 			if (result != null)
@@ -66,7 +65,7 @@ namespace BasicScanner
 						var newScan = _realm.CreateObject<RealmDB.ScanResult>();
 						newScan.Date = timeArray[0];
 						newScan.Time = timeArray[1] + " " + timeArray[2];
-						newScan.Format = result.BarcodeFormat;
+						newScan.Format = result.BarcodeFormat.ToString();
 						newScan.Owner = currUser;
 						newScan.Content = result.Text;
 					});

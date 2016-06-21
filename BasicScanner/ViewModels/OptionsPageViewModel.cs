@@ -60,6 +60,7 @@ namespace BasicScanner
 			bool result = await UserDialogs.Instance.ConfirmAsync("Are you sure you want to log out?", "Log out", "Yes", "No");
 			if (result == true)
 			{
+				App.Current.Properties["IsLoggedIn"] = false;
 				App.Current.MainPage = new LoginPage();
 			}
 

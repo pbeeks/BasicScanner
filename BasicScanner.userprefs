@@ -14,9 +14,8 @@
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.BasicScanner.Droid PreferredExecutionTarget="Android.useThisOne" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.BasicScanner.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.2f2252bce2d43b37247cd0f4cd86501b04426abb" />
 </Properties>

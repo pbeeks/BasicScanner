@@ -13,6 +13,7 @@ namespace BasicScanner
 		private Realm _realm;
 		public INavigation Navigation { get; set; }
 
+		// Populates the HistoryPage listview
 		public HistoryPageViewModel(INavigation iNav)
 		{
 			Navigation = iNav;

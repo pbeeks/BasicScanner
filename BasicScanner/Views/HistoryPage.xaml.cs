@@ -11,19 +11,17 @@ namespace BasicScanner
 	{
 		public IEnumerable<RealmDB.ScanResult> ScanList { get; set; }
 		private HistoryPageViewModel _histVM;
-		private Realm _realm;
 
 		public HistoryPage(RealmDB.User user)
 		{
 			InitializeComponent();
-			_realm = Realm.GetInstance();
 			_histVM = new HistoryPageViewModel(this.Navigation);
 			this.BindingContext = _histVM;
 		}
 
 		public void HistorySelected(object sender, SelectedItemChangedEventArgs e) {
 			
-			Navigation.PushModalAsync(new HistoryDetailsPage(e.SelectedItem as RealmDB.ScanResult));
+ 			Navigation.PushModalAsync(new HistoryDetailsPage(e.SelectedItem as RealmDB.ScanResult));
 		}
 	}
 }

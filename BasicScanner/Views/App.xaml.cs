@@ -7,7 +7,14 @@ namespace BasicScanner
 		public App()
 		{
 			InitializeComponent();
-			MainPage = new NavigationPage(new LoginPage());
+			var isLoggedIn = Properties.ContainsKey("IsLoggedIn") ? (bool)Properties["IsLoggedIn"] : false;
+			if (isLoggedIn == true)
+			{
+				MainPage = new NavigationPage(new MainPage());
+			}
+			else { 
+				MainPage = new NavigationPage(new LoginPage());
+			}
 		}
 
 		protected override void OnStart()
