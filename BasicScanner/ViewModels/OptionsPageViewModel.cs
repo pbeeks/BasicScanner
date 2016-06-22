@@ -9,7 +9,6 @@ namespace BasicScanner
 {
 	public class OptionsPageViewModel : ContentPage
 	{
-		private Realm _realm;
 		private RealmDB.User currUser;
 		private INavigation _nav;
 
@@ -17,7 +16,6 @@ namespace BasicScanner
 		{
 			_nav = navigation;
 			currUser = user;
-			_realm = Realm.GetInstance();
 		}
 
 		public Command _historyCommand;
