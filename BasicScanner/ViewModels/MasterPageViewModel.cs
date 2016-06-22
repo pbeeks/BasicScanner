@@ -4,6 +4,7 @@ using System.Windows.Input;
 using Acr.UserDialogs;
 using Realms;
 using Xamarin.Forms;
+using ZXing.Net.Mobile.Forms;
 
 namespace BasicScanner
 {
@@ -39,19 +40,18 @@ namespace BasicScanner
 		// Method to actually scan the barcode
 		async Task RunScan()
 		{
-			// TODO custom overlay to match spec
-			//ZXingDefaultOverlay overlay = new ZXingDefaultOverlay
-			//{
-			//	TopText = "Hold your phone up to the barcode",
-			//	BottomText= "Scanning will happen automatically"
-			//};
 
-//#if __ANDROID__
-//   			 // Initialize the scanner first so it can track the current context
-//   			 MobileBarcodeScanner.Initialize (Application);
-//#endif
-
+			#if __ANDROID__
+   			 // Initialize the scanner first so it can track the current context
+   			 MobileBarcodeScanner.Initialize (Application);
+			#endif
+		
 			var scanner = new ZXing.Mobile.MobileBarcodeScanner();
+			scanner.TopText = "Hold up your phone to the barcode";
+			scanner.BottomText = "Scanning will happen automatically";
+			scanner.CancelButtonText = "< Back";
+			scanner.FlashButtonText = "" ;
+
 			var result = await scanner.Scan();
 
 			if (result != null)

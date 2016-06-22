@@ -5,23 +5,27 @@ using System.ComponentModel;
 using Xamarin.Forms;
 using Realms;
 using ZXing.Net.Mobile.Forms;
+using System.Windows.Input;
+using System.Threading.Tasks;
 
 namespace BasicScanner
 {
 	public class HistoryDetailPageViewModel 
 	{
 		public RealmDB.ScanResult HistoryData { get; set; }
-		public ZXingBarcodeImageView Barcode { get; set;}
+		public Image Barcode { get; set;}
+		private INavigation Nav;
 
-		public HistoryDetailPageViewModel(RealmDB.ScanResult Info)
+		public HistoryDetailPageViewModel(RealmDB.ScanResult Info, INavigation iNav)
 		{
+			Nav = iNav;
 			HistoryData = Info;
 			Barcode = GetBarcode();
 		}
 
 
 		// Method to generate the barcode image for the HistoryDetailsPage
-		public ZXingBarcodeImageView GetBarcode() {
+		public Image GetBarcode() {
 			ZXingBarcodeImageView barcode = new ZXingBarcodeImageView();
 
 			// Switch statement for setting the barcode format
@@ -91,13 +95,33 @@ namespace BasicScanner
 					barcode.BarcodeFormat = ZXing.BarcodeFormat.UPC_EAN_EXTENSION;
 					break;
 			}
-			barcode.BarcodeOptions.Width = 100;
-			barcode.BarcodeOptions.Height = 100;
+			barcode.BarcodeOptions.Width = 400;
+			barcode.BarcodeOptions.Height = 400;
 			barcode.BarcodeOptions.Margin = 10;
 			barcode.BarcodeValue = "Generated barcode";
 
-			return barcode;
+			Image barcodeF = barcode as Image;
+			return barcodeF;
 		}
-	}
+
+		public Command _backCommand;
+		public ICommand BackCommand
+		{
+			get
+			{
+				if (_backCommand == null)
+				{
+					_backCommand = new Command(async () => await RunBack());
+				}
+				return _backCommand;
+			}
+		}
+
+		async Task RunBack()
+		{
+			await Nav.PopModalAsync();
+		}
+
+		}
 }
 

@@ -8,19 +8,14 @@ namespace BasicScanner
 {
 	public partial class HistoryDetailsPage : ContentPage
 	{
-		private HistoryDetailPageViewModel _detail;
+		
 
 		public HistoryDetailsPage(RealmDB.ScanResult Info)
 		{
-			// link up the data to the HistoryDetails page
-			_detail = new HistoryDetailPageViewModel(Info);
-			this.BindingContext = new HistoryDetailPageViewModel(Info);
+			this.BindingContext = new HistoryDetailPageViewModel(Info, this.Navigation);
 			InitializeComponent();
 		}
 
-		public void BackClicked(object sender, EventArgs e) {
-			Navigation.PopModalAsync();
-		}
 	}
 }
 
