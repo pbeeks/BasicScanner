@@ -17,7 +17,7 @@ namespace BasicScanner
 			NavigationPage.SetHasNavigationBar(this, false);
 			Master = new OptionsPage(user)
 			{
-				Icon = "menuIcon2.png",
+				Icon = "burg.png",
 				Title = "menu",
 				BackgroundColor = Color.FromHex("d3d3d3")
 			};
@@ -32,7 +32,7 @@ namespace BasicScanner
 			NavigationPage.SetHasNavigationBar(this, false);
 			Master = new OptionsPage(user)
 			{
-				Icon = "menuIcon2.png",
+				Icon = "burg.png",
 				Title = "menu",
 				BackgroundColor = Color.FromHex("d3d3d3")
 			};
