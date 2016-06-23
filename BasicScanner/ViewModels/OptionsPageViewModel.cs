@@ -7,7 +7,7 @@ using Xamarin.Forms;
 
 namespace BasicScanner
 {
-	public class OptionsPageViewModel : ContentPage
+	public class OptionsPageViewModel
 	{
 		private RealmDB.User currUser;
 		private INavigation _nav;

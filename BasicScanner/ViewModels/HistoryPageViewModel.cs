@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace BasicScanner
 {
-	public class HistoryPageViewModel : ContentPage
+	public class HistoryPageViewModel
 	{
 		public IEnumerable<RealmDB.ScanResult> ScanList { get; set; }
 		private Realm _realm;

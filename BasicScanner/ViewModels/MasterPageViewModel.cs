@@ -8,7 +8,7 @@ using ZXing.Net.Mobile.Forms;
 
 namespace BasicScanner
 {
-	public class MasterPageViewModel : ContentPage
+	public class MasterPageViewModel 
 	{
 		private Realm _realm;
 		private RealmDB.User currUser;
