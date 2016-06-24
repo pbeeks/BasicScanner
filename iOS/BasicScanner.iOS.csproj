@@ -162,6 +162,12 @@
     <Reference Include="XLabs.Forms.iOS">
       <HintPath>..\packages\XLabs.Forms.2.2.0-pre05\lib\Xamarin.iOS10\XLabs.Forms.iOS.dll</HintPath>
     </Reference>
+    <Reference Include="Plugin.Settings">
+      <HintPath>..\packages\Xam.Plugins.Settings.2.1.0\lib\Xamarin.iOS10\Plugin.Settings.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Settings.Abstractions">
+      <HintPath>..\packages\Xam.Plugins.Settings.2.1.0\lib\Xamarin.iOS10\Plugin.Settings.Abstractions.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BasicScanner\BasicScanner.csproj">
@@ -188,6 +194,7 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
+    <Compile Include="Helpers\Settings.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\kiewitLogo.jpg" />
