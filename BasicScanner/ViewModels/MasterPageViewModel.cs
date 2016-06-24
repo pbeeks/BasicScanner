@@ -11,18 +11,18 @@ namespace BasicScanner
 	public class MasterPageViewModel 
 	{
 		private Realm _realm;
-		private RealmDB.User currUser;
+		private RealmDB.User _currUser;
 		private INavigation _nav;
 
 		public MasterPageViewModel(RealmDB.User user, INavigation navigation)
 		{
 			_nav = navigation;
-			currUser = user;
+			_currUser = user;
 			_realm = Realm.GetInstance();
 		}
 
 
-	//	// Method for what heppens when the scan button is clicked 
+		// Method for what heppens when the scan button is clicked 
 		// Scans the barcode, prompts a message, and adds it to the database
 		public Command _scanCommand;
 		public ICommand ScanCommand
@@ -40,39 +40,7 @@ namespace BasicScanner
 		// Method to actually scan the barcode
 		async Task RunScan()
 		{
-
-			#if __ANDROID__
-   			 // Initialize the scanner first so it can track the current context
-   			 MobileBarcodeScanner.Initialize (Application);
-			#endif
-		
-			var scanner = new ZXing.Mobile.MobileBarcodeScanner();
-			scanner.TopText = "Hold up your phone to the barcode";
-			scanner.BottomText = "Scanning will happen automatically";
-			scanner.CancelButtonText = "< Back";
-			scanner.FlashButtonText = "" ;
-
-			var result = await scanner.Scan();
-
-			if (result != null)
-			{
-				var answer = await UserDialogs.Instance.ConfirmAsync("Would you like to track this barcode?", "Barcode found!", "Yes", "No");
-				if (answer == true)
-				{
-					string[] timeArray = DateTime.Now.ToString().Split(null);
-					_realm.Write(() =>
-					{
-						var newScan = _realm.CreateObject<RealmDB.ScanResult>();
-						newScan.Date = timeArray[0];
-						newScan.Time = timeArray[1] + " " + timeArray[2];
-						newScan.Format = result.BarcodeFormat.ToString();
-						newScan.Owner = currUser;
-						newScan.Content = result.Text;
-					});
-				}
-			}
+			await _nav.PushAsync(new ScannerPage(_nav, _currUser));
 		}
 	}
 }
-
-

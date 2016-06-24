@@ -4,17 +4,12 @@ namespace BasicScanner
 {
 	public partial class App : Application
 	{
+		public RealmDB.User currentUser { get; set; }
+
 		public App()
 		{
 			InitializeComponent();
-			var isLoggedIn = Properties.ContainsKey("IsLoggedIn") ? (bool)Properties["IsLoggedIn"] : false;
-			if (isLoggedIn == true)
-			{
-				MainPage = new NavigationPage(new MainPage());
-			}
-			else { 
-				MainPage = new NavigationPage(new LoginPage());
-			}
+			MainPage = new LoginPage();
 		}
 
 		protected override void OnStart()

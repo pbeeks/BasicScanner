@@ -12,6 +12,7 @@ namespace BasicScanner
 	{
 		public MasterPage(RealmDB.User user)
 		{
+			NavigationPage.SetBackButtonTitle(this, "Back");
 			InitializeComponent();
 			this.BindingContext = new MasterPageViewModel(user, this.Navigation);
 		}

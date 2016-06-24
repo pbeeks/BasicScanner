@@ -6,12 +6,12 @@ using Xamarin.Forms;
 
 namespace BasicScanner
 {
-	public partial class MainPage : MasterDetailPage
+	public partial class RootPage : MasterDetailPage
 	{
 		Realm _realm;
 
 		//Constructor for if the user is coming from the LoginPage
-		public MainPage(RealmDB.User user)
+		public RootPage(RealmDB.User user)
 		{
 			Detail = new NavigationPage(new MasterPage(user));
 			NavigationPage.SetHasNavigationBar(this, false);
@@ -24,7 +24,7 @@ namespace BasicScanner
 		}
 
 		// Constructor for if the user is already logged in
-		public MainPage()
+		public RootPage()
 		{
 			_realm = Realm.GetInstance();
 			RealmDB.User user = _realm.All<RealmDB.User>().ToList().FirstOrDefault();

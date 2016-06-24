@@ -1,10 +1,10 @@
 ﻿<Properties StartupItem="iOS/BasicScanner.iOS.csproj" NuGet.AddPackagesDialog.IncludePrerelease="True">
-  <MonoDevelop.Ide.Workbench ActiveDocument="BasicScanner/ViewModels/OptionsPageViewModel.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="BasicScanner/Views/ScannerPage.cs">
     <Files>
-      <File FileName="BasicScanner/ViewModels/OptionsPageViewModel.cs" Line="18" Column="20" />
-      <File FileName="BasicScanner/ViewModels/HistoryPageViewModel.cs" Line="1" Column="1" />
-      <File FileName="BasicScanner/ViewModels/HistoryDetailPageViewModel.cs" Line="1" Column="1" />
-      <File FileName="BasicScanner/ViewModels/MasterPageViewModel.cs" Line="1" Column="1" />
+      <File FileName="BasicScanner/Views/App.xaml.cs" Line="10" Column="31" />
+      <File FileName="BasicScanner/Views/ScannerPage.cs" Line="58" Column="3" />
+      <File FileName="BasicScanner/Views/MasterDetail/MasterPage.xaml.cs" Line="1" Column="1" />
+      <File FileName="BasicScanner/ViewModels/MasterPageViewModel.cs" Line="51" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />

@@ -14,11 +14,11 @@ namespace BasicScanner
 	{
 		public RealmDB.ScanResult HistoryData { get; set; }
 		public Image Barcode { get; set;}
-		private INavigation Nav;
+		private INavigation _nav;
 
 		public HistoryDetailPageViewModel(RealmDB.ScanResult Info, INavigation iNav)
 		{
-			Nav = iNav;
+			_nav = iNav;
 			HistoryData = Info;
 			Barcode = GetBarcode();
 		}
@@ -119,7 +119,7 @@ namespace BasicScanner
 
 		async Task RunBack()
 		{
-			await Nav.PopModalAsync();
+			await _nav.PopModalAsync();
 		}
 
 		}

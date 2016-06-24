@@ -9,13 +9,13 @@ namespace BasicScanner
 {
 	public class OptionsPageViewModel
 	{
-		private RealmDB.User currUser;
+		private RealmDB.User _currUser;
 		private INavigation _nav;
 
 		public OptionsPageViewModel(RealmDB.User user, INavigation navigation)
 		{
 			_nav = navigation;
-			currUser = user;
+			_currUser = user;
 		}
 
 		public Command _historyCommand;
@@ -33,7 +33,7 @@ namespace BasicScanner
 
 		async Task HistoryTask()
 		{
-			await _nav.PushAsync(new HistoryPage(currUser)
+			await _nav.PushAsync(new HistoryPage(_currUser)
 			{
 				Title = "History"
 			});
@@ -55,10 +55,9 @@ namespace BasicScanner
 
 		async Task LogoutTask()
 		{
-			bool result = await UserDialogs.Instance.ConfirmAsync("Are you sure you want to log out?", "Log out", "Yes", "No");
+			bool result = await UserDialogs.Instance.ConfirmAsync("Are you sure you want to log out?", "Log out?", "Yes", "No");
 			if (result == true)
 			{
-				App.Current.Properties["IsLoggedIn"] = false;
 				App.Current.MainPage = new LoginPage();
 			}
 
