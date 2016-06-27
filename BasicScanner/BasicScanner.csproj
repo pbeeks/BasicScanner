@@ -85,6 +85,7 @@
     <Compile Include="ViewModels\OptionsPageViewModel.cs" />
     <Compile Include="Helpers\Settings.cs" />
     <Compile Include="Views\ScannerPage.cs" />
+    <Compile Include="ViewModels\BaseViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Splat">

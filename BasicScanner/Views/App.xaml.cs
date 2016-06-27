@@ -4,7 +4,7 @@ namespace BasicScanner
 {
 	public partial class App : Application
 	{
-		public RealmDB.User currentUser { get; set; }
+		public RealmDB.User goob { get; set; }
 
 		public App()
 		{
