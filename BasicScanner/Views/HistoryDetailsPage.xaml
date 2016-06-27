@@ -3,7 +3,7 @@
 	<ContentPage.Content>
 		<StackLayout>
 			<ContentView Content="{Binding Barcode}" />
-		<Grid  >
+		<Grid >
 		<Grid.RowDefinitions>
 				<RowDefinition Height="*" />
 				<RowDefinition Height="*" />
