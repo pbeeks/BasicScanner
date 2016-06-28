@@ -7,11 +7,10 @@ namespace BasicScanner
 {
 	public partial class OptionsPage : ContentPage
 	{
-		private RealmDB.User currUser;
-
-		public OptionsPage(RealmDB.User user)
+		
+		public OptionsPage()
 		{
-			this.BindingContext = new OptionsPageViewModel(user, this.Navigation);
+			this.BindingContext = new OptionsPageViewModel(this.Navigation);
 			InitializeComponent();
 		}
 	}

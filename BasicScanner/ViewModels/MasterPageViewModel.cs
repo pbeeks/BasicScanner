@@ -10,15 +10,12 @@ namespace BasicScanner
 {
 	public class MasterPageViewModel 
 	{
-		private Realm _realm;
 		private RealmDB.User _currUser;
 		private INavigation _nav;
 
-		public MasterPageViewModel(RealmDB.User user, INavigation navigation)
+		public MasterPageViewModel(INavigation navigation)
 		{
-			_nav = navigation;
-			_currUser = user;
-			_realm = Realm.GetInstance();
+			_currUser = App.pubUser;
 		}
 
 

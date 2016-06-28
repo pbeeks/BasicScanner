@@ -35,11 +35,12 @@ namespace BasicScanner
 						loginUser = newUser;
 					});
 
-					// SHow successful login
+					// Show successful login
 					UserDialogs.Instance.SuccessToast("User created", null, 3000);
 
-
-					App.Current.MainPage = new NavigationPage(new RootPage(loginUser));
+					App.Current.Properties["IsLoggedIn"] = true;
+					App.pubUser = loginUser;
+					App.Current.MainPage = new NavigationPage(new RootPage());
 				}
 			}
 			else
@@ -51,8 +52,9 @@ namespace BasicScanner
 					// Show login failure
 					UserDialogs.Instance.ErrorToast("Login failed", "Username or password incorrect", 3000);
 				}
-
-				App.Current.MainPage = new NavigationPage(new RootPage(loginUser));
+				App.Current.Properties["IsLoggedIn"] = true;
+				App.pubUser = loginUser;
+				App.Current.MainPage = new NavigationPage(new RootPage());
 			}
 		}
 

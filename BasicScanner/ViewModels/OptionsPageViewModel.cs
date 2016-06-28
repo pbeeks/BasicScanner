@@ -12,10 +12,10 @@ namespace BasicScanner
 		private RealmDB.User _currUser;
 		private INavigation _nav;
 
-		public OptionsPageViewModel(RealmDB.User user, INavigation navigation)
+		public OptionsPageViewModel(INavigation navigation)
 		{
 			_nav = navigation;
-			_currUser = user;
+			_currUser = App.pubUser;
 		}
 
 		public Command _historyCommand;
@@ -58,6 +58,8 @@ namespace BasicScanner
 			bool result = await UserDialogs.Instance.ConfirmAsync("Are you sure you want to log out?", "Log out?", "Yes", "No");
 			if (result == true)
 			{
+				App.Current.Properties["IsLoggedIn"] = false;
+				App.pubUser = null;
 				App.Current.MainPage = new LoginPage();
 			}
 
