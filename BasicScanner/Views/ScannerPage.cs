@@ -15,10 +15,10 @@ namespace BasicScanner
 		private Realm _realm;
 		private RealmDB.User _currUser;
 
-	     public ScannerPage(INavigation nav, RealmDB.User user)
+	     public ScannerPage(INavigation nav)
 		{
 			_realm = Realm.GetInstance();
-			_currUser = user;
+			_currUser = App.pubUser;
 			_nav = nav;
 			Title = "Scan";
 			zxing = new ZXingScannerView()

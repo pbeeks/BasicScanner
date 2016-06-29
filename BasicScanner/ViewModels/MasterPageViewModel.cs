@@ -10,15 +10,13 @@ namespace BasicScanner
 {
 	public class MasterPageViewModel 
 	{
-		private Realm _realm;
 		private RealmDB.User _currUser;
 		private INavigation _nav;
 
-		public MasterPageViewModel(RealmDB.User user, INavigation navigation)
+		public MasterPageViewModel(INavigation navigation)
 		{
 			_nav = navigation;
-			_currUser = user;
-			_realm = Realm.GetInstance();
+			_currUser = App.pubUser;
 		}
 
 
@@ -40,7 +38,7 @@ namespace BasicScanner
 		// Method to actually scan the barcode
 		async Task RunScan()
 		{
-			await _nav.PushAsync(new ScannerPage(_nav, _currUser));
+			await _nav.PushAsync(new ScannerPage(_nav));
 		}
 	}
 }

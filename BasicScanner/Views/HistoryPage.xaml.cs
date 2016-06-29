@@ -12,7 +12,7 @@ namespace BasicScanner
 		public IEnumerable<RealmDB.ScanResult> ScanList { get; set; }
 		private HistoryPageViewModel _histVM;
 
-		public HistoryPage(RealmDB.User user)
+		public HistoryPage()
 		{
 			InitializeComponent();
 			_histVM = new HistoryPageViewModel(this.Navigation);

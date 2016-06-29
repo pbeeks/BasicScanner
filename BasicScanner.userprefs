@@ -1,14 +1,22 @@
 ﻿<Properties StartupItem="iOS/BasicScanner.iOS.csproj" NuGet.AddPackagesDialog.IncludePrerelease="True">
-  <MonoDevelop.Ide.Workbench ActiveDocument="BasicScanner/ViewModels/LoginPageViewModel.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="BasicScanner/Views/App.xaml.cs">
     <Files>
-      <File FileName="BasicScanner/Views/App.xaml.cs" Line="7" Column="27" />
-      <File FileName="BasicScanner/ViewModels/LoginPageViewModel.cs" Line="63" Column="1" />
+      <File FileName="BasicScanner/ViewModels/LoginPageViewModel.cs" Line="42" Column="30" />
+      <File FileName="BasicScanner/Views/MasterDetail/RootPage.xaml" Line="6" Column="20" />
+      <File FileName="BasicScanner/Views/MasterDetail/RootPage.cs" Line="11" Column="3" />
+      <File FileName="BasicScanner/ViewModels/MasterPageViewModel.cs" Line="17" Column="4" />
+      <File FileName="BasicScanner/Views/App.xaml.cs" Line="19" Column="1" />
+      <File FileName="BasicScanner/obj/Debug/BasicScanner.Views.App.xaml.g.cs" Line="21" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
   <MonoDevelop.Ide.ItemProperties.BasicScanner.Droid PreferredExecutionTarget="Android.useThisOne" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/patrick.buechler/Projects/BasicScanner/BasicScanner/Views/App.xaml.cs" line="12" column="1" />
+      <Breakpoint file="/Users/patrick.buechler/Projects/BasicScanner/BasicScanner/Views/App.xaml.cs" line="10" column="1" />
+      <Breakpoint file="/Users/patrick.buechler/Projects/BasicScanner/BasicScanner/Views/App.xaml.cs" line="11" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.BasicScanner.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.2f2252bce2d43b37247cd0f4cd86501b04426abb" />

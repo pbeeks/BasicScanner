@@ -35,24 +35,26 @@ namespace BasicScanner
 						loginUser = newUser;
 					});
 
-					// SHow successful login
+					// Show successful login
 					UserDialogs.Instance.SuccessToast("User created", null, 3000);
 
-
-					App.Current.MainPage = new NavigationPage(new RootPage(loginUser));
+					App.Current.Properties["IsLoggedIn"] = true;
+					App.pubUser = loginUser;
+					App.Current.MainPage = new NavigationPage(new RootPage());
 				}
 			}
 			else
 			{
 				// Check if the username & password match
-				var loginUser = _realm.All<RealmDB.User>().Where(u => u.username == userParam && u.password == passParam).ToList().FirstOrDefault();
+				RealmDB.User loginUser = _realm.All<RealmDB.User>().Where(u => u.username == userParam && u.password == passParam).ToList().FirstOrDefault();
 				if (loginUser == null)
 				{
 					// Show login failure
 					UserDialogs.Instance.ErrorToast("Login failed", "Username or password incorrect", 3000);
 				}
-
-				App.Current.MainPage = new NavigationPage(new RootPage(loginUser));
+				App.Current.Properties["IsLoggedIn"] = true;
+				App.pubUser = loginUser;
+				App.Current.MainPage = new NavigationPage(new RootPage());
 			}
 		}
 
