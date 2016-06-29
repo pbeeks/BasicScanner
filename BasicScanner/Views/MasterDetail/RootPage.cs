@@ -11,9 +11,8 @@ namespace BasicScanner
 
 		public RootPage()
 		{
-			App app = new App();
-			Detail = new NavigationPage(new MasterPage());
 			NavigationPage.SetHasNavigationBar(this, false);
+			Detail = new NavigationPage(new MasterPage());
 			Master = new OptionsPage()
 			{
 				Icon = "burg.png",

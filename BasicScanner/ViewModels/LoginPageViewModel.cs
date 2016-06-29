@@ -46,7 +46,7 @@ namespace BasicScanner
 			else
 			{
 				// Check if the username & password match
-				var loginUser = _realm.All<RealmDB.User>().Where(u => u.username == userParam && u.password == passParam).ToList().FirstOrDefault();
+				RealmDB.User loginUser = _realm.All<RealmDB.User>().Where(u => u.username == userParam && u.password == passParam).ToList().FirstOrDefault();
 				if (loginUser == null)
 				{
 					// Show login failure

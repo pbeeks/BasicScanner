@@ -33,7 +33,7 @@ namespace BasicScanner
 
 		async Task HistoryTask()
 		{
-			await _nav.PushAsync(new HistoryPage(_currUser)
+			await _nav.PushAsync(new HistoryPage()
 			{
 				Title = "History"
 			});

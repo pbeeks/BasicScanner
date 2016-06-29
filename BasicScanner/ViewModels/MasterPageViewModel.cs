@@ -15,6 +15,7 @@ namespace BasicScanner
 
 		public MasterPageViewModel(INavigation navigation)
 		{
+			_nav = navigation;
 			_currUser = App.pubUser;
 		}
 
@@ -37,7 +38,7 @@ namespace BasicScanner
 		// Method to actually scan the barcode
 		async Task RunScan()
 		{
-			await _nav.PushAsync(new ScannerPage(_nav, _currUser));
+			await _nav.PushAsync(new ScannerPage(_nav));
 		}
 	}
 }
