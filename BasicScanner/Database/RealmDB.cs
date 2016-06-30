@@ -14,7 +14,6 @@ namespace BasicScanner
 
 		public class User : RealmObject { 
 
-			[ObjectId]
 			public string username { get; set; }
 
 			public string password { get; set; }

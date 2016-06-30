@@ -59,7 +59,8 @@ namespace BasicScanner
 			if (result == true)
 			{
 				App.Current.Properties["IsLoggedIn"] = false;
-				App.pubUser = null;
+				App.Current.Properties["loggedInUser"] = "";
+				await App.Current.SavePropertiesAsync();
 				App.Current.MainPage = new LoginPage();
 			}
 
