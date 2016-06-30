@@ -4,7 +4,6 @@ using Realms;
 using System.Linq;
 using Acr.UserDialogs;
 using System.ServiceModel.Channels;
-using XLabs.Helpers;
 using BasicScanner.Helpers;
 
 namespace BasicScanner
