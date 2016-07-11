@@ -21,9 +21,15 @@ namespace BasicScanner
 			_user = App.pubUser;
 			Navigation = iNav;
 			_realm = Realm.GetInstance();
-			ScanList = null;
+
+
+		}
+
+		public void GetData()
+		{
 			string uName = _user.username;
-			ScanList = _realm.All<RealmDB.ScanResult>().Where(u => u.Owner.username == uName).ToList();
+			ScanList = _realm.All<RealmDB.ScanResult>().Where(u => u.Owner.username.Equals(uName));
+
 		}
 	}
 }
