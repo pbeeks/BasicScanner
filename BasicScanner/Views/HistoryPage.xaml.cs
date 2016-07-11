@@ -14,9 +14,10 @@ namespace BasicScanner
 
 		public HistoryPage()
 		{
-			InitializeComponent();
 			_histVM = new HistoryPageViewModel(this.Navigation);
 			this.BindingContext = _histVM;
+			_histVM.GetData();
+			InitializeComponent();
 		}
 
 		public void HistorySelected(object sender, SelectedItemChangedEventArgs e) {
