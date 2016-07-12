@@ -1,9 +1,7 @@
-﻿<Properties StartupItem="iOS/BasicScanner.iOS.csproj" NuGet.AddPackagesDialog.IncludePrerelease="True">
-  <MonoDevelop.Ide.Workbench ActiveDocument="BasicScanner/packages.config">
+﻿<Properties StartupItem="iOS/BasicScanner.iOS.csproj">
+  <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="BasicScanner/ViewModels/HistoryPageViewModel.cs" Line="32" Column="1" />
-      <File FileName="iOS/packages.config" Line="2" Column="11" />
-      <File FileName="BasicScanner/packages.config" Line="3" Column="2" />
+      <File FileName="BasicScanner/Database/RealmDB.cs" Line="33" Column="39" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
