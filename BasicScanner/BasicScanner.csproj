@@ -85,8 +85,6 @@
     <Compile Include="ViewModels\OptionsPageViewModel.cs" />
     <Compile Include="Views\ScannerPage.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
-    <Compile Include="Database\Tables.cs" />
-    <Compile Include="Database\ISQLite.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="FodyWeavers.xml" />
