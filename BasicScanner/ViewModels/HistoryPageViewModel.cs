@@ -5,6 +5,7 @@ using Xamarin.Forms;
 using System.Collections.ObjectModel;
 using System.Linq;
 using Acr.UserDialogs;
+using ZXing.Mobile;
 
 namespace BasicScanner
 {
@@ -28,8 +29,7 @@ namespace BasicScanner
 		public void GetData()
 		{
 			string uName = _user.username;
-			ScanList = _realm.All<RealmDB.ScanResult>().Where(u => u.Owner.username.Equals(uName));
-
+			ScanList = _realm.All<RealmDB.ScanResult>().Where(obj => obj.Owner == _user);
 		}
 	}
 }
